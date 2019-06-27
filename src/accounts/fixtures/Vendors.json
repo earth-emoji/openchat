@@ -1,0 +1,35 @@
+[
+    {
+        "model": "accounts.vendor",
+        "pk": 1,
+        "fields": {
+            "slug": "7da9b54c-8f43-11e9-bc42-526af7764f64",
+            "user": 2,
+            "business_name": "Eixo",
+            "active": true
+        }
+        
+    },
+    {
+        "model": "accounts.vendor",
+        "pk": 2,
+        "fields": {
+            "slug": "7da9b7c2-8f43-11e9-bc42-526af7764f64",
+            "user": 3,
+            "business_name": "Abacy",
+            "active": true
+        }
+        
+    },
+    {
+        "model": "accounts.vendor",
+        "pk": 3,
+        "fields": {
+            "slug": "7da9b90c-8f43-11e9-bc42-526af7764f64",
+            "user": 5,
+            "business_name": "Aponder",
+            "active": true
+        }
+        
+    }
+]

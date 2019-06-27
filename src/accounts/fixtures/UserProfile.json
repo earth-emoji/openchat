@@ -1,0 +1,72 @@
+[
+    {
+        "model": "accounts.userprofile",
+        "pk": 1,
+        "fields": {
+            "slug": "e4bc38a2-8f40-11e9-bc42-526af7764f64",
+            "user": 1,
+            "contacts": [2,3]
+        }
+        
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 2,
+        "fields": {
+            "slug": "e4bc3d84-8f40-11e9-bc42-526af7764f64",
+            "user": 2,
+            "contacts": [3,4]
+        }
+        
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 3,
+        "fields": {
+            "slug": "e4bc3ef6-8f40-11e9-bc42-526af7764f64",
+            "user": 3,
+            "contacts": [1,2]
+        }
+        
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 4,
+        "fields": {
+            "slug": "e4bc402c-8f40-11e9-bc42-526af7764f64",
+            "user": 4,
+            "contacts": [2,5]
+        }
+        
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 5,
+        "fields": {
+            "slug": "e4bc4158-8f40-11e9-bc42-526af7764f64",
+            "user": 5,
+            "contacts": [4,6]
+        }
+        
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 6,
+        "fields": {
+            "slug": "e4bc42fc-8f40-11e9-bc42-526af7764f64",
+            "user": 6,
+            "contacts": [5,7]
+        }
+        
+    },
+    {
+        "model": "accounts.userprofile",
+        "pk": 7,
+        "fields": {
+            "slug": "e4bc4446-8f40-11e9-bc42-526af7764f64",
+            "user": 7,
+            "contacts": [5]
+        }
+        
+    }
+]

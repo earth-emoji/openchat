@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>OpenTalk | {% block title %}Welcome{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+  {% block stylesheets %}{% endblock stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/overrides.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/colors.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  {% block styles %}{% endblock styles %}
+</head>
+<body>
+    {% include 'partials/navbar.html' %}
+    <div class="container-fluid">
+        <div class="row my-2">
+            <div class="col-lg-8 order-lg-2 my-5">
+                {% include 'partials/messages.html' %}
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-lg-4 order-lg-1 text-center my-5">
+                <div class="avatar-block my-4">
+                    {% for album in request.user.profile.albums.all  %}
+                        {% for photo in album.photos.all %}
+                            {% if photo.default and album.name == request.user.username %}
+                                <img src="{{ MEDIA_URL }}{{photo.url}}" class="img-thumbnail rounded-circle d-block avatar" alt="avatar">
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    
+                    <div class="card mt-3" style="width: 18rem;">
+                        <div class="card-header">
+                            {{ request.user.name }}
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="width: 18rem;">
+                    <div class="card-header">
+                        Content
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="{% url 'rooms:index' %}">Rooms</a></li>
+                        <li class="list-group-item"><a href="#">Link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/footer.html' %}
+    <script src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendors/popper/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/ajaxCRUD.js' %}"></script>
+    {% block javascript %}{% endblock javascript %}
+</body>
+</html>

@@ -1,0 +1,106 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "username": "poppyfairylock",
+            "email": "misael_grim@gmail.com",
+            "name": "Phil M Corcoran",
+            "sex": "Male",
+            "is_vendor": false,
+            "password": "8fc7cdb9b175eaaa416ac5c8e0839c7b",
+            "is_active": true
+
+        }
+        
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "username": "joyce.tromp",
+            "email": "katelin_tow@hotmail.com",
+            "name": "Iris G Newsom",
+            "sex": "Female",
+            "is_vendor": true,
+            "password": "31da4fcc1850e03242812189a78cde90",
+            "is_active": true
+
+        }
+        
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "username": "",
+            "email": "",
+            "name": "Carol R Bello",
+            "sex": "Female",
+            "is_vendor": true,
+            "password": "7108244e17343522197f81c59c9a4790",
+            "is_active": true
+
+        }
+        
+    },
+    {
+        "model": "users.user",
+        "pk": 4,
+        "fields": {
+            "username": "nyah_prosa2004",
+            "email": "heather.oberbrunn@hotmail.com",
+            "name": "Monica A Leffel",
+            "sex": "Female",
+            "is_vendor": false,
+            "password": "87996cea609c3ac6e5bc025b412734ea",
+            "is_active": true
+
+        }
+        
+    },
+    {
+        "model": "users.user",
+        "pk": 5,
+        "fields": {
+            "username": "pearlie.br2008",
+            "email": "lonzo.nicol@gmail.com",
+            "name": "John M Owen",
+            "sex": "Male",
+            "is_vendor": true,
+            "password": "95c4dd83de4974d325cd93502f97af65",
+            "is_active": true
+
+        }
+        
+    },
+    {
+        "model": "users.user",
+        "pk": 6,
+        "fields": {
+            "username": "",
+            "email": "danielle_hue@yahoo.com",
+            "name": "Bernice G Simon",
+            "sex": "Female",
+            "is_vendor": false,
+            "password": "363353069c0865ba5ab9254f19728260",
+            "is_active": true
+
+        }
+        
+    },
+    {
+        "model": "users.user",
+        "pk": 7,
+        "fields": {
+            "username": "flavio",
+            "email": "lemuel2016@gmail.com",
+            "name": "Michelle R Aylward",
+            "sex": "Female",
+            "is_vendor": false,
+            "password": "6b94474302ce0390e226ad8b4bfee2ab",
+            "is_active": true
+        }
+        
+    }
+]

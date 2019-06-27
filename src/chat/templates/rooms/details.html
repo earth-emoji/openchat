@@ -1,0 +1,79 @@
+{% extends 'profile.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="my-3">
+    <h1>{{room.name}}</h1>
+
+    <ul id='messages'>
+        {% for msg in messages %}
+            <li>{{ msg.message }} via {{ msg.sender.user.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <form id="msg-form" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="msg">Message</label>
+          <textarea class="form-control" name="msg" id="msg" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script src="{% static 'vendors/websocket/reconnecting-websocket.min.js' %}"></script>
+<script src="{% static 'js/rooms.js' %}"></script>
+
+
+<script>
+var loc = window.location;
+var ws = 'ws://';
+if (loc.protocol === 'https:') {
+    ws = 'wss://';
+}
+
+var endpoint = ws + loc.host + loc.pathname;
+//var socket = new ReconnectingWebSocket(endpoint);
+var socket = new WebSocket(endpoint);
+
+var formData = $("#msg-form");
+var msgInput = $("#msg");
+var messages = $('#messages');
+
+socket.onopen = function(e) {
+    console.log("open", e);
+
+    // send form data
+    formData.submit(function(evt) {
+        evt.preventDefault();
+        var msgText = msgInput.val();
+        var data = {
+            'message': msgText
+        }
+        socket.send(JSON.stringify(data));
+        formData[0].reset();
+    });
+}
+
+socket.onmessage = function(e) {
+    console.log("message", e);
+
+    // receive data from the server
+    var json = JSON.parse(e.data);
+
+    messages.append("<li>" + json.message + " via " + json.username + "</li>");
+}
+
+socket.onclose = function(e) {
+    console.log("close", e);
+}
+
+socket.onerror = function(e) {
+    console.log("error", e);
+}
+
+</script>
+{% endblock javascript %}

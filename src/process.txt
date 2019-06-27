@@ -1,0 +1,25 @@
+create a project that allows users to create chat rooms and invite other users to join or other users can request to join
+
+apps
+    users
+    accounts
+    chat
+    notifications
+
+models
+    message
+    room
+    request
+
+host: 
+    - can create rooms
+    - invite users to their room
+
+member:
+    - can receieve invitations to join rooms
+    - enter rooms
+    - chat with other members
+
+
+
+for the load data send a dictionary with the rooms

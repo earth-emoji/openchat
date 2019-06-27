@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="parallax text-center parallax-mt">
+  <div class="mid">
+    <h2>OpenTalk</h2>
+    <p class="tagline">
+      <a class="btn btn-primary" href="{% url 'user_signup' %}">Register</a>
+      <a class="btn btn-primary" href="{% url 'login' %}">Login</a> 
+    </p>
+  </div>
+  <div class="color-overlay"></div>
+</div>
+{% endblock %}
